@@ -12,7 +12,6 @@ const FollowUpList = ({ followUps, setFollowUps }) => {
             await respondToFollowUp(id, response);
             toast.success(`Response recorded: ${response}`);
 
-            // Update state directly after response
             setFollowUps((prevFollowUps) =>
                 prevFollowUps.map((f) =>
                     f._id === id ? { ...f, status: response === "Concern" ? "Concern" : "Completed" } : f
